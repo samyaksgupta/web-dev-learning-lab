@@ -17,7 +17,7 @@ An interactive, beginner-friendly web application designed to teach the fundamen
 
 1. **Clone the repository**:
    ```bash
-   git clone <repo-url>
+   git clone https://github.com/samyaksgupta/web-dev-learning-lab.git
    cd web-dev-learning-lab
    ```
 
