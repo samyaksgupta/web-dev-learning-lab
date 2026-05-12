@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="style.xsl"?>
+<syllabus>
+    <course>Web Programming</course>
+    <modules>
+        <module>
+            <id>1</id>
+            <name>Bootstrap</name>
+            <topics>Grid, Jumbotron, Buttons</topics>
+        </module>
+        <module>
+            <id>2</id>
+            <name>Protocols</name>
+            <topics>HTTP, DNS, FTP</topics>
+        </module>
+        <module>
+            <id>3</id>
+            <name>JavaScript</name>
+            <topics>DOM, ES6, OOP</topics>
+        </module>
+    </modules>
+</syllabus>

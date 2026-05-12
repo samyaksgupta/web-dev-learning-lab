@@ -1,0 +1,135 @@
+body {
+    scroll-behavior: smooth;
+    background-color: #f8f9fa;
+}
+
+.content-area {
+    padding-bottom: 50px;
+}
+
+#terminal {
+    font-family: 'Courier New', Courier, monospace;
+    border: 1px solid #333;
+    box-shadow: inset 0 0 10px #000;
+}
+
+#terminal div {
+    margin-bottom: 5px;
+    border-left: 2px solid transparent;
+    padding-left: 5px;
+}
+
+#terminal .protocol {
+    color: #ffc107;
+    font-weight: bold;
+}
+
+#terminal .timestamp {
+    color: #6c757d;
+    font-size: 0.8em;
+}
+
+.jumbotron-sim {
+    transition: transform 0.3s ease;
+}
+
+.jumbotron-sim:hover {
+    transform: scale(1.01);
+}
+
+/* Educational Tooltips */
+[data-code-hint] {
+    position: relative;
+    cursor: help;
+}
+
+[data-code-hint]:hover::after {
+    content: attr(data-code-hint);
+    position: absolute;
+    bottom: 125%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #333;
+    color: #fff;
+    padding: 8px 12px;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    white-space: pre-wrap;
+    width: 250px;
+    z-index: 1000;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    border: 1px solid #ffc107;
+}
+
+/* Theory Sections */
+.theory-card {
+    border-left: 5px solid #0dcaf0;
+    background-color: #f0f9ff;
+}
+
+.code-block {
+    background: #272822;
+    color: #f8f8f2;
+    padding: 10px;
+    border-radius: 5px;
+    font-family: monospace;
+    font-size: 0.9em;
+    margin: 10px 0;
+}
+
+/* Client-Server Visualization */
+.comms-viz {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background: #fff;
+    border: 1px dashed #ccc;
+    border-radius: 10px;
+}
+
+.node {
+    text-align: center;
+    padding: 15px;
+    border: 2px solid #333;
+    border-radius: 8px;
+    width: 120px;
+}
+
+.arrow {
+    flex-grow: 1;
+    text-align: center;
+    position: relative;
+    font-weight: bold;
+    color: #0d6efd;
+}
+
+.arrow::after {
+    content: "←───────→";
+    display: block;
+    font-size: 1.5em;
+}
+
+.responsive-demo {
+    transition: all 0.5s ease;
+    background: #eee;
+    padding: 10px;
+    text-align: center;
+}
+
+/* Custom scrollbar for terminal */
+#terminal::-webkit-scrollbar {
+    width: 8px;
+}
+
+#terminal::-webkit-scrollbar-track {
+    background: #111;
+}
+
+#terminal::-webkit-scrollbar-thumb {
+    background: #444;
+}
+
+#terminal::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}

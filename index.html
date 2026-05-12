@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Dev Learning Lab - Complete Edition</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">WebDev Lab 🚀</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav me-auto">
+                <li class="nav-item"><a class="nav-link" href="#css-theory">CSS & Theory</a></li>
+                <li class="nav-item"><a class="nav-link" href="#bootstrap">Bootstrap</a></li>
+                <li class="nav-item"><a class="nav-link" href="#www">WWW & Comms</a></li>
+                <li class="nav-item"><a class="nav-link" href="#js-basics">JS Basics</a></li>
+                <li class="nav-item"><a class="nav-link" href="#advanced-js">Advanced JS</a></li>
+                <li class="nav-item"><a class="nav-link" href="#ajax-xml-json">Data (AJAX/XML)</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="container-fluid mt-3">
+    <div class="row">
+        <!-- Main Content -->
+        <main class="col-md-8 col-lg-9 content-area">
+            
+            <!-- Section: CSS Fundamentals -->
+            <section id="css-theory" class="mb-5 p-4 border rounded bg-light">
+                <h2 class="text-primary">Types of CSS & Selectors 🎨</h2>
+                <p class="text-muted">Hover over components to see the <strong>code hints</strong>!</p>
+                
+                <div class="row g-4">
+                    <div class="col-md-6">
+                        <div class="card theory-card h-100">
+                            <div class="card-body">
+                                <h5>1. Types of CSS</h5>
+                                <ul class="list-unstyled">
+                                    <li data-code-hint="<h1 style='color: blue;'>Hello</h1>"><i class="bi bi-info-circle"></i> <strong>Inline:</strong> Directly inside HTML tags.</li>
+                                    <li data-code-hint="<style> h1 { color: red; } </style>"><i class="bi bi-info-circle"></i> <strong>Internal:</strong> Inside &lt;style&gt; tag.</li>
+                                    <li data-code-hint="<link rel='stylesheet' href='style.css'>"><i class="bi bi-info-circle"></i> <strong>External:</strong> Separate .css file.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card theory-card h-100">
+                            <div class="card-body">
+                                <h5>2. Selectors</h5>
+                                <div class="btn-group w-100">
+                                    <button class="btn btn-sm btn-outline-dark" data-code-hint="CSS: p { color: green; }">Element</button>
+                                    <button class="btn btn-sm btn-outline-dark" data-code-hint="CSS: .my-class { border: 1px; }">.Class</button>
+                                    <button class="btn btn-sm btn-outline-dark" data-code-hint="CSS: #my-id { font-weight: bold; }">#ID</button>
+                                </div>
+                                <p class="small mt-2">Selectors target specific HTML elements for styling.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-4">
+                    <h5>3. Responsiveness (Grid)</h5>
+                    <div class="responsive-demo border rounded p-3" data-code-hint="Class: col-sm-12 col-md-6 col-lg-4&#10;Try resizing your browser window!">
+                        <div class="row g-2">
+                            <div class="col-sm-12 col-md-6 col-lg-4"><div class="p-2 bg-primary text-white">Mobile: 12 | Desk: 4</div></div>
+                            <div class="col-sm-12 col-md-6 col-lg-4"><div class="p-2 bg-success text-white">Mobile: 12 | Desk: 4</div></div>
+                            <div class="col-sm-12 col-md-6 col-lg-4"><div class="p-2 bg-danger text-white">Mobile: 12 | Desk: 4</div></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section: WWW & Client-Server -->
+            <section id="www" class="mb-5 p-4 border rounded bg-light">
+                <h2 class="text-info">WWW & Client-Server Model 🌐</h2>
+                <div class="comms-viz mb-3 position-relative">
+                    <div id="client-node" class="node bg-warning shadow-sm">
+                        <i class="bi bi-laptop fs-1"></i><br><strong>Client</strong>
+                    </div>
+                    <div class="arrow text-center">
+                        <div id="packet" class="position-absolute bg-primary rounded-circle" style="width: 15px; height: 15px; top: 50%; left: 20%; display: none; z-index: 10;"></div>
+                        <span id="comm-status" class="small d-block mb-1 text-muted">Idle</span>
+                        <div class="line" style="height: 2px; background: #0d6efd; width: 100%;"></div>
+                    </div>
+                    <div id="server-node" class="node bg-dark text-white shadow-sm">
+                        <i class="bi bi-hdd-stack fs-1"></i><br><strong>Server</strong>
+                    </div>
+                </div>
+
+                <div class="text-center mb-4">
+                    <div class="btn-group">
+                        <button class="btn btn-outline-primary btn-sm" onclick="simulateRequest('GET')">Send HTTP GET</button>
+                        <button class="btn btn-outline-danger btn-sm" onclick="simulateRequest('POST')">Send HTTP POST</button>
+                    </div>
+                    <p class="small text-muted mt-2">Click to see how a request travels and gets processed!</p>
+                </div>
+                
+                <div class="row g-3">
+                    <div class="col-md-6">
+                        <div class="card h-100 border-info">
+                            <div class="card-body">
+                                <h5>DNS & Hosting</h5>
+                                <div class="input-group">
+                                    <input type="text" id="dns-input" class="form-control" placeholder="google.com">
+                                    <button class="btn btn-info" onclick="simulateDNS()">Resolve DNS</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card h-100 border-info">
+                            <div class="card-body">
+                                <h5>Hosting Provider</h5>
+                                <select id="hosting-type" class="form-select" onchange="logHostingInfo()">
+                                    <option value="">Select Type...</option>
+                                    <option value="shared">Shared Hosting</option>
+                                    <option value="vps">VPS Hosting</option>
+                                    <option value="cloud">Cloud Hosting</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section: Bootstrap Components -->
+            <section id="bootstrap" class="mb-5 p-4 border rounded bg-light">
+                <h2 class="text-success">Bootstrap Features ⚡</h2>
+                <div class="p-4 mb-4 bg-primary text-white rounded-3" data-code-hint="Bootstrap Jumbotron (Hero Section)">
+                    <h2>Interactive Hero</h2>
+                    <p>Standardized components for fast development.</p>
+                </div>
+
+                <div class="row g-3 align-items-center">
+                    <div class="col-md-4">
+                        <div class="btn-group" data-code-hint="btn-group">
+                            <button class="btn btn-secondary" onclick="logAction('Clicked Left', 'UI')">Left</button>
+                            <button class="btn btn-secondary" onclick="logAction('Clicked Mid', 'UI')">Mid</button>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="list-group" data-code-hint="list-group">
+                            <button class="list-group-item list-group-item-action py-1" onclick="logAction('List Item', 'UI')">Item 1</button>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <nav data-code-hint="pagination">
+                            <ul class="pagination pagination-sm mb-0">
+                                <li class="page-item"><a class="page-link" href="#" onclick="logAction('Page 1', 'NAV')">1</a></li>
+                                <li class="page-item"><a class="page-link" href="#" onclick="logAction('Page 2', 'NAV')">2</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section: JS Basics -->
+            <section id="js-basics" class="mb-5 p-4 border rounded bg-light">
+                <h2 class="text-dark">JavaScript Basics & DOM 🛠️</h2>
+                <div class="mb-3">
+                    <button class="btn btn-warning" onclick="showJSAlert()">Trigger Alert</button>
+                    <button class="btn btn-success" onclick="showJSPrompt()">Input Box (Prompt)</button>
+                    <button class="btn btn-dark" onclick="manipulateCSS()">Magic CSS (DOM Change)</button>
+                </div>
+                
+                <div class="card shadow-sm">
+                    <div class="card-body">
+                        <h5>Validation (Forms)</h5>
+                        <form id="sample-form" onsubmit="validateForm(event)">
+                            <div class="row g-2">
+                                <div class="col-md-6">
+                                    <input type="text" id="val-text" class="form-control" placeholder="Enter name (min 4 chars)" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <input type="text" id="val-pattern" class="form-control" placeholder="email@test.com">
+                                </div>
+                                <div class="col-12 text-end">
+                                    <button type="submit" class="btn btn-primary">Validate & Log Action</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section: Advanced JS -->
+            <section id="advanced-js" class="mb-5 p-4 border rounded bg-light">
+                <h2 class="text-secondary">Advanced JS (OOP & ES6) 🧠</h2>
+                <p class="text-muted">Interactive playground for Object-Oriented concepts.</p>
+                
+                <!-- OOP Simulation -->
+                <div class="card mb-4 border-secondary">
+                    <div class="card-header bg-secondary text-white">Interactive OOP: Banking System</div>
+                    <div class="card-body">
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <h6>1. Class & Encapsulation</h6>
+                                <div class="input-group mb-2">
+                                    <input type="text" id="acc-name" class="form-control form-control-sm" placeholder="Account Holder">
+                                    <button class="btn btn-dark btn-sm" onclick="createAccount()">Create Object</button>
+                                </div>
+                                <div id="acc-controls" style="display:none;">
+                                    <div class="btn-group w-100 mb-2">
+                                        <button class="btn btn-outline-success btn-sm" onclick="accAction('deposit')">Deposit $50</button>
+                                        <button class="btn btn-outline-danger btn-sm" onclick="accAction('withdraw')">Withdraw $20</button>
+                                    </div>
+                                    <button class="btn btn-warning btn-sm w-100" onclick="upgradeToSavings()" data-code-hint="Demonstrates Inheritance:&#10;SavingsAccount extends BankAccount">Inheritance: Upgrade to Savings</button>
+                                </div>
+                            </div>
+                            <div class="col-md-6 border-start">
+                                <h6>Object State (Encapsulated)</h6>
+                                <div id="object-viz" class="p-3 bg-white border rounded font-monospace small" style="min-height: 100px;">
+                                    No active object instance.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ES6 & BOM -->
+                <div class="row g-3">
+                    <div class="col-md-6">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h5>ES6 Features</h5>
+                                <button class="btn btn-outline-primary btn-sm mb-2 w-100" onclick="demoES6()">Run ES6 Demo</button>
+                                <div id="es6-output" class="small text-muted"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h5>BOM Live Info</h5>
+                                <ul class="list-unstyled small" id="bom-list">
+                                    <li><strong>Platform:</strong> <span id="bom-platform">...</span></li>
+                                    <li><strong>Resolution:</strong> <span id="bom-res">...</span></li>
+                                    <li><strong>History:</strong> <span id="bom-history">...</span></li>
+                                </ul>
+                                <button class="btn btn-outline-danger btn-sm w-100" onclick="demoBOM()">Refresh BOM</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section: Data -->
+            <section id="ajax-xml-json" class="mb-5 p-4 border rounded bg-light">
+                <h2 class="text-warning">AJAX, XML & JSON 📊</h2>
+                <div class="row">
+                    <div class="col-md-5">
+                        <button class="btn btn-outline-success w-100 mb-2" onclick="fetchJSON()">Fetch JSON</button>
+                        <button class="btn btn-outline-info w-100" onclick="fetchXML()">Fetch XML</button>
+                    </div>
+                    <div class="col-md-7">
+                        <div id="data-display" class="p-3 border bg-white font-monospace small" style="height: 120px; overflow: auto;">
+                            No data fetched yet.
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <!-- Sidebar: Terminal (Always Visible on Desktop) -->
+        <aside class="col-md-4 col-lg-3">
+            <div class="terminal-container sticky-top" style="top: 80px; z-index: 100;">
+                <div class="terminal-header bg-dark text-white p-2 d-flex justify-content-between">
+                    <span><i class="bi bi-terminal"></i> Terminal Log</span>
+                    <button class="btn btn-sm btn-outline-light py-0" onclick="clearTerminal()">CLR</button>
+                </div>
+                <div id="terminal" class="bg-black text-success p-3 font-monospace small overflow-auto" style="height: 600px; border: 2px solid #333;">
+                    <div>> System Online.</div>
+                    <div>> Merge complete: Interactive + Theory.</div>
+                </div>
+            </div>
+        </aside>
+    </div>
+</div>
+
+<footer class="bg-dark text-white text-center p-4 mt-5">
+    <p>Web Development Complete Lab &copy; 2026</p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

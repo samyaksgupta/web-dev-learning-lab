@@ -1,0 +1,15 @@
+{
+  "title": "Web Development Syllabus",
+  "syllabus_items": [
+    "Bootstrap Grid & Components",
+    "WWW Protocols (HTTP, DNS, TCP/IP)",
+    "JavaScript DOM & BOM",
+    "AJAX & XHR Requests",
+    "XML & JSON Data Handling",
+    "Advanced ES6 & OOP"
+  ],
+  "metadata": {
+    "version": "1.0",
+    "last_updated": "2026-05-12"
+  }
+}
