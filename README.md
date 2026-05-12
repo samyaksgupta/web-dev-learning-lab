@@ -39,3 +39,6 @@ An interactive, beginner-friendly web application designed to teach the fundamen
 - **WWW**: DNS resolution, Hosting types, Client-Server model.
 - **JavaScript**: DOM/BOM manipulation, Form Validation, ES6, OOP.
 - **Data**: AJAX fetch, JSON parsing, XML/XSLT transformation.
+
+---
+made with ❤️ for Tania
